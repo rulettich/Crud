@@ -1,0 +1,71 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  margin-right: 20px;
+}
+.form__title {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+.form__form__content {
+  display: grid;
+}
+.form__card {
+  border: 1px solid #ddd;
+  margin-top: 16px;
+  margin-right: 40px;
+  border-radius: 8px;
+  box-shadow: -1px 0px 5px 4px #f7f1f1;
+}
+.form__form__card__title {
+  padding-top: 20px;
+  font-weight: 400;
+}
+.form__card__body {
+  padding: 16px;
+}
+.form__f1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__label {
+  font-size: 16px;
+}
+.form__input {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+.form__button {
+  margin-top: 16px;
+  padding-top: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: blue;
+  color: white;
+  padding: 8px;
+}
+
+.form__card__title {
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form__input2 {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+/*# sourceMappingURL=style.css.map */

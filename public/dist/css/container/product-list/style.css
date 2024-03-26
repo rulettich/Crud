@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  margin-right: 20px;
+}
+.form__title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+.form__form__content {
+  display: grid;
+}
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.form__card {
+  border: 1px solid #ddd;
+  margin-top: 16px;
+  margin-right: 40px;
+  border-radius: 8px;
+  box-shadow: -1px 0px 5px 4px #f7f1f1;
+}
+.form__card__title {
+  padding-top: 8px;
+  padding-bottom: 16px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.form__card__body {
+  padding: 16px;
+}
+.form__description {
+  font-size: 14px;
+}
+.form__id__num {
+  font-size: 16px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  color: grey;
+}
+.form__double {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+.form__product__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.form__edit {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */

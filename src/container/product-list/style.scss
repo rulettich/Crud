@@ -1,0 +1,87 @@
+@use '../../lib/service.scss' as s;
+ 
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(2);
+
+    margin-right: 20px;
+
+  &__title {
+    margin-top: s.space(4);
+    margin-bottom: s.space(4);
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+} 
+
+  &__form__content {
+     display: grid;
+     
+
+ }
+
+ &__grid {
+  display:grid;
+   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+ 
+ }
+
+&__card {
+    border: 1px solid s.color('light');
+    margin-top: s.space(4);
+
+    margin-right: s.space(10);
+    border-radius: s.space(2);
+    box-shadow: -1px 0px 5px 4px  #f7f1f1;
+}
+
+&__card__title {
+    padding-top: s.space(2);
+    padding-bottom: s.space(4);
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+&__card__body {
+    padding: s.space(4);
+}
+
+&__description {
+  font-size: 14px;
+}
+
+&__id__num {
+  font-size: 16px;
+  padding-top: s.space(6);
+  padding-bottom: s.space(4);
+  color: grey;
+}
+
+&__double {
+  display: flex;
+  justify-content: space-between;
+  padding-top: s.space(4);
+}
+
+&__product__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+&__edit {
+  text-decoration: none;
+}
+}
+
+
+
+
+
+
+ 
+
+  

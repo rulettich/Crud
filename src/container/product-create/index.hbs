@@ -9,6 +9,7 @@
     <form method='POST' action='/product-create'>
       <div class='form__content'>
         <div class='form__card'>
+
           <div class='form__card__body'>
             <h5 class='form__card__title'>Інформація про
               товар</h5>
@@ -54,32 +55,6 @@
       </div>
     </form>
   </section>
-
-  {{!-- <section class='form'>
-
-    <h1 class='form__title'>Створені товари</h1>
-
-    <div class='product-list'>
-      {{#with data.products}}
-        {{#if isEmpty}}
-          <mark>Список товарів пустий</mark>
-        {{else}}
-          <ul>
-            {{#each list}}
-              <li>{{name}}
-                |
-                {{price}}
-                |
-                {{description}}
-              </li>
-            {{/each}}
-          </ul>
-        {{/if}}
-      {{/with}}
-    </div>
-
-  </section> --}}
-
 </main>
 
 {{! 

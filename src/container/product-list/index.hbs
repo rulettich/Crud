@@ -1,0 +1,183 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+<main>
+  <section class='form'>
+    <h1 class='form__title'>Список товарів</h1>
+    <form method='POST' action='/product-list'>
+      <div class='form__content'>
+        <div class='form__grid'>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Стильна сукня</h5>
+              <p class='form__description'>Елегантна сукня з
+                натуральної тканини для особливих випадків</p>
+              <div class='form__id__num'>ID: 1357924680</div>
+              <div class='form__double'>
+                <div
+                  class='form__product__price'
+                >1500₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Чоловічий
+                годинник</h5>
+              <p class='form__description'>Елегантний
+                годинник з механічним механізмом та сталевим
+                браслетом
+              </p>
+              <div class='form__id__num'>ID: 8024679135</div>
+              <div class='form__double'>
+                <div
+                  class='form__product__price'
+                >2500₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Столові прибори</h5>
+              <p class='form__description'>Набір столових
+                приборів зі сталі виготовлені в класичному
+                стилі.
+
+              </p>
+              <div class='form__id__num'>ID: 5036214789</div>
+              <div class='form__double'>
+                <div class='form__product__price'>600₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Спортивні
+                кросівки</h5>
+              <p class='form__description'>Зручні та стильні
+                кросівки для активного способу життя</p>
+              <div class='form__id__num'>ID: 9876543210</div>
+              <div class='form__double'>
+                <div
+                  class='form__product__price'
+                >1200₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Жіночий рюкзак</h5>
+              <p class='form__description'>Стильний рюкзак з
+                великими відділеннями та кишенями</p>
+              <div class='form__id__num'>ID: 3192850467</div>
+              <div class='form__double'>
+                <div class='form__product__price'>900₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Шкіряний
+                гаманець</h5>
+              <p class='form__description'>Елегантний
+                гаманець з натуральної шкіри з багатьма
+                відділеннями</p>
+              <div class='form__id__num'>ID: 7261943580</div>
+              <div class='form__double'>
+                <div class='form__product__price'>400₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Сонячні окуляри</h5>
+              <p class='form__description'>Модні окуляри з
+                високоякісними лінзами для захисту очей від
+                сонця</p>
+              <div class='form__id__num'>ID: 2468135790</div>
+              <div class='form__double'>
+                <div class='form__product__price'>800₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5 class='form__card__title'>Парасолька</h5>
+              <p class='form__description'>Компактна
+                парасолька з автоматичним механізмом</p>
+              <div class='form__id__num'>ID: 6749258130</div>
+              <div class='form__double'>
+                <div class='form__product__price'>350₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='form__card'>
+            <div class='form__card__body'>
+              <h5
+                class='form__card__title'
+              >Фітнес-браслет</h5>
+              <p class='form__description'>Браслет для
+                відстеження активності та здоров'я</p>
+              <div class='form__id__num'>ID: 1584079263</div>
+              <div class='form__double'>
+                <div class='form__product__price'>700₴</div>
+                <a
+                  href='/product-edit?id={{id}}'
+                  class='form__edit'
+                >Редагувати</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
