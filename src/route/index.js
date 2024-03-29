@@ -84,10 +84,25 @@ router.get('/product-edit', function (req, res) {
   const { id } = req.query
 
   console.log(id)
+  const product = Product.getById(Number(id))
+  console.log(product)
 
-  res.render('product-edit', {
-    style: 'product-edit',
-  })
+  if (product) {
+    return res.render('product-edit', {
+      style: 'product-edit',
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+      info: 'Продукту за таким ID не знайдено',
+    })
+  }
 })
 
 // ================================================================

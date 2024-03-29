@@ -20,6 +20,7 @@
                   type='name'
                   name='name'
                   class='form__input'
+                  value='{{name}}'
                 />
               </div>
               <div class='form__field'>
@@ -31,6 +32,7 @@
                   type='price'
                   name='price'
                   class='form__input'
+                  value='{{price}}'
                 />
               </div>
             </div>
@@ -43,6 +45,7 @@
                 type='description'
                 name='description'
                 class='form__input2'
+                value='{{description}}'
               />
               <button class='form__button'>Створити товар</button>
             </div>
@@ -54,31 +57,6 @@
       </div>
     </form>
   </section>
-
-  {{!-- <section class='form'>
-
-    <h1 class='form__title'>Створені товари</h1>
-
-    <div class='product-list'>
-      {{#with data.products}}
-        {{#if isEmpty}}
-          <mark>Список товарів пустий</mark>
-        {{else}}
-          <ul>
-            {{#each list}}
-              <li>{{name}}
-                |
-                {{price}}
-                |
-                {{description}}
-              </li>
-            {{/each}}
-          </ul>
-        {{/if}}
-      {{/with}}
-    </div>
-
-  </section> --}}
 
 </main>
 

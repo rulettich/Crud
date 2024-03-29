@@ -3,19 +3,21 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 <section class='form'>
-  <div class='form__card'>
-    <div class='form__card__body'>
-      <div class='couple'>
-        <h1 class='form__card__title'>Успішне виконання дії</h1>
-        <p class='info'>Товар успішно видалений</p>
+  <form method='POST' action='product-delete'>
+    <div class='form__card'>
+      <div class='form__card__body'>
+        <div class='couple'>
+          <h1 class='form__card__title'>Успішне виконання
+            дії</h1>
+          <p class='info'>Товар успішно видалений</p>
+        </div>
+        <a
+          href='/product-list'
+          class='form__button'
+        >Повернутися назад</a>
       </div>
-      <a
-        href='/product-list'
-        class='form__button'
-      >Повернутися назад</a>
     </div>
-  </div>
-
+  </form>
 </section>
 
 {{! 
