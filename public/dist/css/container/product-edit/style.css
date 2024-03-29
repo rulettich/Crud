@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-
   gap: 8px;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 .form__title {
   margin-top: 16px;
@@ -12,13 +11,9 @@
   font-weight: bold;
   color: blue;
 }
-.form__form__content {
-  display: grid;
-}
 .form__card {
   border: 1px solid #ddd;
   margin-top: 16px;
-  margin-right: 40px;
   border-radius: 8px;
   box-shadow: -1px 0px 5px 4px #f7f1f1;
 }
@@ -31,23 +26,10 @@
 }
 .form__f1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-top: 12px;
   margin-bottom: 12px;
-
-  gap: 32px;
-}
-.form__title {
-  font-size: 20px;
-  font-weight: bold;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
-}
-.form__content {
-  display: grid;
-  gap: 24px;
-
 }
 .form__field {
   display: flex;
@@ -55,16 +37,20 @@
   gap: 8px;
 }
 .form__label {
-
   font-size: 16px;
 }
 .form__input {
   border: 1px solid #ddd;
   padding: 4px;
+  width: 100%;
 }
-.form__button {
+.form__button__double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.form__button__primary {
   display: flex;
-  align-items: center;
   justify-content: center;
   text-decoration: none;
   margin-top: 16px;
@@ -74,6 +60,19 @@
   background-color: blue;
   color: white;
   padding: 8px;
+}
+.form__button__danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding-top: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
 }
 
 .form__card__title {
@@ -87,33 +86,4 @@
   padding: 12px;
 }
 
-.user-list li {
-  padding-top: 5px;
-  padding-right: 15px;
-
-  font-size: 14px;
-}
-.form__input {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-.form__button {
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 20px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.user-list li {
-  padding-right: 15px;
-  padding-top: 5px;
-
-  padding-bottom: 5px;
-}
-
-
+/*# sourceMappingURL=style.css.map */

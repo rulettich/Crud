@@ -1,0 +1,106 @@
+@use '../../lib/service.scss' as s;
+ 
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(2);
+
+    margin-right: 20px;
+
+  &__title {
+    margin-top: s.space(4);
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+} 
+
+  &__form__content {
+    display: grid;
+ }
+
+&__card {
+    border: 1px solid s.color('light');
+    margin-top: s.space(4);
+
+    margin-right: s.space(10);
+    border-radius: s.space(2);
+    box-shadow: -1px 0px 5px 4px  #f7f1f1;
+}
+
+&__card__title {
+    padding-top: 20px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    
+}
+
+&__card__body {
+   display: flex;
+    padding: s.space(4);
+   justify-content: space-between;
+}
+
+  // &__f1 {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+   
+  //   gap: s.space(2);
+  //   margin-top: s.space(3);
+
+  //   margin-bottom: s.space(3);
+    
+  // }
+
+  // &__field {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: s.space(2)
+  // }
+
+
+  // &__label {
+  //   font-size: 16px;
+  // }
+
+//   &__input {
+//     border: 1px solid s.color('light');
+//     padding: s.space(1);
+//  }
+
+  &__button {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: s.space(2);
+    margin-bottom: s.space(2);
+    
+    border: 1px solid ;
+    border-radius: 8px;
+    background-color: s.color('primary');
+    color: white;
+    padding: s.space(2);
+    
+  }
+
+ 
+}
+
+
+
+
+
+
+.form__card__title {
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form__input2 {
+   
+    border: 1px solid s.color('light');
+    padding: s.space(3);
+    
+  }
