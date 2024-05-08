@@ -1,3 +1,20 @@
+/* Error: There's already a module with namespace "var".
+ *     ,
+ * 5   | @use './var.scss';
+ *     | ================= original @use
+ * ... |
+ * 9   | @use './var.scss';
+ *     | ^^^^^^^^^^^^^^^^^ new @use
+ *     '
+ *   src\lib\service.scss 9:1  root stylesheet */
 
-
-/*# sourceMappingURL=service.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: There's already a module with namespace \"var\".\a     \2577 \a 5   \2502  @use './var.scss';\d\a     \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original @use\a... \2502 \a 9   \2502  @use './var.scss';\d\a     \2502  ^^^^^^^^^^^^^^^^^ new @use\a     \2575 \a   src\\lib\\service.scss 9:1  root stylesheet";
+}

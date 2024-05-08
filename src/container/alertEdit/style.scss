@@ -1,47 +1,4 @@
 @use '../../lib/service.scss' as s;
-<<<<<<< HEAD
-
-.card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-
-  &__header {
-    flex-grow: 1;
-  }
-
-  &__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  &__subtitle {
-    font-size: 18px;
-    margin-top: 8px;
-    color: #666666;
-  }
-
-  &__button {
-    background-color: blue;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: darkblue;
-    }
-  }
-}
-=======
  
 .form {
     display: flex;
@@ -147,4 +104,3 @@
     padding: s.space(3);
     
   }
->>>>>>> 2da9f5aaa1a7b453acfa9e03ff779a78357211d6

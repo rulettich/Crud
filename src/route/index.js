@@ -4,6 +4,63 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
+class Product {
+  static #list = []
+
+  constructor(name, price, description) {
+    this.id = Math.floor(Math.random() * 90000) + 10000
+    this.createDate = new Date().toISOString()
+    this.name = name
+    this.price = price
+    this.description = description
+  }
+
+  static add = (product) => {
+    this.#list.push(product)
+  }
+
+  static getList = () => this.#list
+
+  static getById = (id) =>
+    this.#list.find((product) => product.id === id)
+
+  static deleteById = (id) => {
+    const index = this.#list.findIndex(
+      (product) => product.id === id,
+    )
+    if (index !== -1) {
+      this.#list.splice(index, 1)
+      return true
+    } else {
+      return false
+    }
+  }
+
+  static updateById = (
+    id,
+    { price, name, description },
+  ) => {
+    const product = this.getById(id)
+
+    if (product) {
+      if (price) {
+        product.price = price
+      }
+
+      if (name) {
+        product.name = name
+      }
+
+      if (description) {
+        product.description = description
+      }
+
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
 class Product {
   static #list = []
@@ -226,28 +283,33 @@ router.get('/', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
-//======================================
-
-// router.get Створює нам один ентпоїнт
+//=================================================================
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/purchase-product', function (req, res) {
-  const id = Number(req.query.id)
+router.get('/product-edit', function (req, res) {
+  const { id } = req.query
 
-  // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('purchase-product', {
-    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'purchase-product',
+  console.log(id)
+  const product = Product.getById(Number(id))
+  console.log(product)
 
-    data: {
-      list: Product.getRandomList(id),
-      product: Product.getById(id),
-    },
-  })
-  // ↑↑ сюди вводимо JSON дані
+  if (product) {
+    return res.render('product-edit', {
+      style: 'product-edit',
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+      info: 'Продукту за таким ID не знайдено',
+    })
+  }
 })
-
-//====================================
 
 // router.get Створює нам один ентпоїнт
 
