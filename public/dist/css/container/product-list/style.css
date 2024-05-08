@@ -1,21 +1,127 @@
-/* Error: There's already a module with namespace "var".
- *     ,
- * 5   | @use './var.scss';
- *     | ================= original @use
- * ... |
- * 9   | @use './var.scss';
- *     | ^^^^^^^^^^^^^^^^^ new @use
- *     '
- *   src\lib\service.scss 9:1                   @use
- *   src\container\product-list\style.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: There's already a module with namespace \"var\".\a     \2577 \a 5   \2502  @use './var.scss';\d\a     \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original @use\a... \2502 \a 9   \2502  @use './var.scss';\d\a     \2502  ^^^^^^^^^^^^^^^^^ new @use\a     \2575 \a   src\\lib\\service.scss 9:1                   @use\a   src\\container\\product-list\\style.scss 1:1  root stylesheet";
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  margin-right: 20px;
 }
+.form__title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+.form__form__content {
+  display: grid;
+}
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.form__card {
+  border: 1px solid #ddd;
+  margin-top: 16px;
+  margin-right: 40px;
+  border-radius: 8px;
+  box-shadow: -1px 0px 5px 4px #f7f1f1;
+}
+.form__card__title {
+  padding-top: 8px;
+  padding-bottom: 16px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.form__card__body {
+  padding: 16px;
+}
+.form__description {
+  font-size: 14px;
+}
+.form__id__num {
+  font-size: 16px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  color: grey;
+}
+.form__double {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+.form__product__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.form__edit {
+  text-decoration: none;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  padding-top: 16px;
+  gap: 8px;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+
+.card {
+  display: grid;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product__card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: -1px 0px 5px 4px #f7f1f1;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.product__name {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.product__description {
+  font-size: 14px;
+  padding-bottom: 24px;
+}
+
+.product__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product__edit {
+  display: flex;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -4,63 +4,63 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
-class Product {
-  static #list = []
+// class Product {
+//   static #list = []
 
-  constructor(name, price, description) {
-    this.id = Math.floor(Math.random() * 90000) + 10000
-    this.createDate = new Date().toISOString()
-    this.name = name
-    this.price = price
-    this.description = description
-  }
+//   constructor(name, price, description) {
+//     this.id = Math.floor(Math.random() * 90000) + 10000
+//     this.createDate = new Date().toISOString()
+//     this.name = name
+//     this.price = price
+//     this.description = description
+//   }
 
-  static add = (product) => {
-    this.#list.push(product)
-  }
+//   static add = (product) => {
+//     this.#list.push(product)
+//   }
 
-  static getList = () => this.#list
+//   static getList = () => this.#list
 
-  static getById = (id) =>
-    this.#list.find((product) => product.id === id)
+//   static getById = (id) =>
+//     this.#list.find((product) => product.id === id)
 
-  static deleteById = (id) => {
-    const index = this.#list.findIndex(
-      (product) => product.id === id,
-    )
-    if (index !== -1) {
-      this.#list.splice(index, 1)
-      return true
-    } else {
-      return false
-    }
-  }
+//   static deleteById = (id) => {
+//     const index = this.#list.findIndex(
+//       (product) => product.id === id,
+//     )
+//     if (index !== -1) {
+//       this.#list.splice(index, 1)
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
 
-  static updateById = (
-    id,
-    { price, name, description },
-  ) => {
-    const product = this.getById(id)
+//   static updateById = (
+//     id,
+//     { price, name, description },
+//   ) => {
+//     const product = this.getById(id)
 
-    if (product) {
-      if (price) {
-        product.price = price
-      }
+//     if (product) {
+//       if (price) {
+//         product.price = price
+//       }
 
-      if (name) {
-        product.name = name
-      }
+//       if (name) {
+//         product.name = name
+//       }
 
-      if (description) {
-        product.description = description
-      }
+//       if (description) {
+//         product.description = description
+//       }
 
-      return true
-    } else {
-      return false
-    }
-  }
-}
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
+// }
 
 class Product {
   static #list = []
@@ -263,6 +263,19 @@ Promocode.add('SUMMER2023', 0.9)
 Promocode.add('DISCOUNT50', 0.5)
 Promocode.add('SALE25', 0.75)
 
+//================================================================
+router.get('/purchase-product', function (req, res) {
+  const id = Number(req.query.id)
+
+  res.render('purchase-product', {
+    style: 'purchase-product',
+    data: {
+      list: Product.getRandomList(id),
+      product: Product.getById(id),
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
 //=================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -519,6 +532,58 @@ router.post('/purchase-submit', function (req, res) {
       message: 'Успішно',
       info: 'Замовлення створено',
       link: `/purchase-list`,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/purchase-list', function (req, res) {
+  const list = Purchase.getList()
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-list', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-list',
+
+    title: 'Мої замовлення',
+
+    data: {
+      purchases: {
+        list,
+      },
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/purchase-info', function (req, res) {
+  const id = Number(req.query.id)
+
+  const purchase = Purchase.getById(id)
+
+  const bonus = Purchase.calcBonusAmount(
+    purchase.totalPrice,
+  )
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-info', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-info',
+
+    data: {
+      id: purchase.id,
+      firstname,
+      lastname,
+      phone,
+      email,
+
+      delivery,
+      product,
+      productPrice,
+      deliveryPrice,
+      totalPrice,
+
+      bonus: bonus,
     },
   })
   // ↑↑ сюди вводимо JSON дані

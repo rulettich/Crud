@@ -1,5 +1,6 @@
 @use '../../lib/service.scss' as s;
 
+
 @use '../../component/heading/style.scss' as heading;
 
 @use '../../component/purchase-product/style.scss' as purchaseProduct;
@@ -70,9 +71,9 @@
 }
 
 .product-info__button {
-  background-color: s.color(main);
+  background-color: blue;
   color: white;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
