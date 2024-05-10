@@ -4,17 +4,12 @@
  }}
 
 <main class='main'>
-  {{#with data}}
-    <form
-      method='GET'
-      action='/purchase-edit?id={{id}}'
-      class='form-card'
-    >
-      {{>heading title="Інформація про замовлення"}}
-        
-         {{>field label="ID" name="id" value=id}}
-
-        {{>divider}}
+    
+    {{>heading title="Інформація про замовлення"}}
+      {{#with data}}
+          {{>field label="ID" name="id" value=id}}
+ 
+          {{>divider}}
 
          
 
@@ -43,10 +38,10 @@
           {{>divider}}
 
          
-
+       <a href="/purchase-edit?id={{id}}">
           {{>button text="Змінити дані"}}
-
-    </form>
+       </a>   
+    
   {{/with}}
 </main>
 

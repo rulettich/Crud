@@ -608,7 +608,7 @@ router.get('/purchase-edit', function (req, res) {
     return res.render('purchase-edit', {
       style: 'purchase-edit',
 
-      title: 'Зміна данних',
+      // title: 'Зміна данних',
 
       data: {
         id: purchase.id,
@@ -643,6 +643,11 @@ router.post('/purchase-edit', function (req, res) {
   res.render('alert', {
     style: 'alert',
     info: result,
+    data: {
+      message: 'Успішно!',
+      info: 'Дані оновлено',
+      link: 'purchase-list',
+    },
   })
 })
 
