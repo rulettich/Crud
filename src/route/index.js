@@ -181,10 +181,11 @@ class Purchase {
   constructor(data, product) {
     this.id = ++Purchase.#count
 
-    this.fistname = data.firstname
+    this.firstname = data.firstname
     this.lastname = data.lastname
     this.phone = data.phone
     this.email = data.email
+    this.delivery = data.delivery
 
     this.comment = data.comment || null
 
@@ -298,31 +299,31 @@ router.get('/', function (req, res) {
 
 //=================================================================
 
-// ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/product-edit', function (req, res) {
-  const { id } = req.query
+// // ↙️ тут вводимо шлях (PATH) до сторінки
+// router.get('/product-edit', function (req, res) {
+//   const { id } = req.query
 
-  console.log(id)
-  const product = Product.getById(Number(id))
-  console.log(product)
+//   console.log(id)
+//   const product = Product.getById(Number(id))
+//   console.log(product)
 
-  if (product) {
-    return res.render('product-edit', {
-      style: 'product-edit',
-      data: {
-        name: product.name,
-        price: product.price,
-        id: product.id,
-        description: product.description,
-      },
-    })
-  } else {
-    return res.render('alert', {
-      style: 'alert',
-      info: 'Продукту за таким ID не знайдено',
-    })
-  }
-})
+//   if (product) {
+//     return res.render('product-edit', {
+//       style: 'product-edit',
+//       data: {
+//         name: product.name,
+//         price: product.price,
+//         id: product.id,
+//         description: product.description,
+//       },
+//     })
+//   } else {
+//     return res.render('alert', {
+//       style: 'alert',
+//       info: 'Продукту за таким ID не знайдено',
+//     })
+//   }
+// })
 
 // router.get Створює нам один ентпоїнт
 
@@ -411,6 +412,8 @@ router.post('/purchase-submit', function (req, res) {
     email,
     phone,
     comment,
+
+    delivery,
 
     promocode,
     bonus,
@@ -515,7 +518,7 @@ router.post('/purchase-submit', function (req, res) {
       lastname,
       email,
       phone,
-
+      delivery,
       promocode,
       comment,
     },
@@ -525,7 +528,6 @@ router.post('/purchase-submit', function (req, res) {
   console.log(purchase)
 
   res.render('alert', {
-    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'alert',
 
     data: {
@@ -565,28 +567,83 @@ router.get('/purchase-info', function (req, res) {
     purchase.totalPrice,
   )
 
+  console.log('purchase:', purchase, bonus)
+
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-info', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-info',
 
+    title: 'Інформація про замовлення',
+
     data: {
       id: purchase.id,
-      firstname,
-      lastname,
-      phone,
-      email,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
 
-      delivery,
-      product,
-      productPrice,
-      deliveryPrice,
-      totalPrice,
+      delivery: purchase.delivery,
+      product: purchase.product.title,
+      productPrice: purchase.productPrice,
+      deliveryPrice: purchase.deliveryPrice,
+      totalPrice: purchase.totalPrice,
 
       bonus: bonus,
     },
   })
   // ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/purchase-edit', function (req, res) {
+  const { id } = req.query
+
+  console.log(id)
+
+  const purchase = Purchase.getById(Number(id))
+
+  console.log(purchase)
+
+  if (purchase) {
+    return res.render('purchase-edit', {
+      style: 'purchase-edit',
+
+      title: 'Зміна данних',
+
+      data: {
+        id: purchase.id,
+        firstname: purchase.firstname,
+        lastname: purchase.lastname,
+        phone: purchase.phone,
+        email: purchase.email,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+      info: 'Данних за таким ID не знайдено',
+    })
+  }
+
+  // ↑↑ сюди вводимо JSON дані
+})
+
+router.post('/purchase-edit', function (req, res) {
+  const { id, firstname, lastname, phone, email } = req.body
+
+  console.log(id, firstname, lastname, phone, email)
+
+  const result = Purchase.updateById(Number(id), {
+    firstname,
+    lastname,
+    phone,
+    email,
+  })
+
+  res.render('alert', {
+    style: 'alert',
+    info: result,
+  })
 })
 
 // Підключаємо роутер до бек-енду
