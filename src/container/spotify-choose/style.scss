@@ -1,19 +1,25 @@
+@use '../../lib/service.scss' as s;
+
+// @use '../../lib/spotify.scss' as spotify;
+
+
 a {
   text-decoration: none;
   color: inherit;
   transition: opacity 0.6s;
-}
-a:hover {
-  opacity: 0.6;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .main {
-  background-color: #121212;
+  background-color: s.color(dark);
   height: 100%;
-  color: #ddd;
+  color: s.color(light);
   display: flex;
   justify-content: center;
-  padding: 24px 8px;
+  padding: s.space(6) s.space(2);
 }
 
 .main__content {
@@ -21,7 +27,7 @@ a:hover {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: s.space(15);
 }
 
 .title {
@@ -32,15 +38,17 @@ a:hover {
   text-align: center;
 }
 
+
+
 .choose {
   display: grid;
-  gap: 24px;
+  gap: s.space(6);
 }
 
 .choose__item {
   display: grid;
   grid-template-columns: 56px 1fr;
-  gap: 24px;
+  gap: s.space(6);
 }
 
 .choose__content {
@@ -48,5 +56,3 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-
-/*# sourceMappingURL=style.css.map */

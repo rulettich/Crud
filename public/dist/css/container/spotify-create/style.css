@@ -32,6 +32,11 @@ a:hover {
   text-align: center;
 }
 
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .choose {
   display: grid;
   gap: 24px;
@@ -47,6 +52,44 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.form__field {
+  width: 100%;
+  font-size: 64px;
+  color: #ddd;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid #ced4da;
+}
+
+.form__button {
+  color: #121212;
+  background-color: #20D562;
+  max-width: fit-content;
+  font-size: 20px;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: opacity 0.6s;
+}
+.form__button:hover {
+  opacity: 0.6;
+}
+
+.add-button {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 24px;
+  color: #ddd;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */
