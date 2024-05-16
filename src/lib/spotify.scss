@@ -1,4 +1,4 @@
-@use '../../lib/servise.scss' as s;
+@use '../lib/serviсe.scss' as s;
 
 
 
@@ -12,86 +12,168 @@ a {
     }
   }
   
-  .main {
-    background-color: s.color(dark);
-    height: 100%;
-    color: s.color(light);
-    display: flex;
-    justify-content: center;
-    padding: s.space(6) s.space(2);
-  }
+  // .main {
+  //   background-color: s.color(dark);
+  //   height: 100%;
+  //   color: s.color(light);
+  //   display: flex;
+  //   justify-content: center;
+  //   padding: s.space(6) s.space(2);
+  // }
   
-  .main__content {
-    width: 100%;
-    max-width: 600px;
+  // .main__content {
+  //   width: 100%;
+  //   max-width: 600px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: s.space(15);
+  // }
+  
+  // .title {
+  //   font-size: 24px;
+  // }
+  
+  // .title--center {
+  //   text-align: center;
+  // }
+  
+  // .track {
+  //   display: grid;
+  //   grid-template-columns: 92px 1fr 42px;
+  //   gap: s.space(7);
+  //   align-items: center;
+
+  //   &__list {
+  //      display: grid;
+  //      gap: s.space(7);
+  //   }
+
+  //   &__content {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     gap: s.space(2);
+  //   }
+
+  //   &__name {
+  //     font-size: 24px;
+  //     color: s.color(light);
+  //   }
+
+  //   &__author {
+  //     font-size: 16px;
+  //     color: s.color(gray);
+  //   }
+  // }
+
+
+  // .playlist {
+  //   display: grid;
+  //   grid-template-columns: 92px 1fr;
+  //   gap: s.space(7);
+  //   align-items: center;
+  
+  //   &__list {
+  //     display: grid;
+  //     gap: s.space(7);
+  //   }
+  
+  //   &__content {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     gap: s.space(2);
+  //   }
+  
+  //   &__name {
+  //     font-size: 24px;
+  //     color: s.color(light)
+  //   }
+  
+  //   &__amount {
+  //     font-size: 16px;
+  //     color: gray;
+  //   }
+  // }
+
+  .column {
     display: flex;
     flex-direction: column;
-    gap: s.space(15);
   }
-  
-  .title {
-    font-size: 24px;
-  }
-  
-  .title--center {
-    text-align: center;
-  }
-  
-  .track {
-    display: grid;
-    grid-template-columns: 92px 1fr 42px;
-    gap: s.space(7);
+
+  .column--center {
+    @extend.column;
     align-items: center;
-
-    &__list {
-       display: grid;
-       gap: s.space(7);
-    }
-
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: s.space(2);
-    }
-
-    &__name {
-      font-size: 24px;
-      color: s.color(light);
-    }
-
-    &__author {
-      font-size: 16px;
-      color: s.color(gray);
-    }
   }
 
-
-  .playlist {
-    display: grid;
-    grid-template-columns: 92px 1fr;
-    gap: s.space(7);
+  .row {
+    display: flex;
     align-items: center;
-  
-    &__list {
-      display: grid;
-      gap: s.space(7);
+  }
+
+  .row--between {
+    @extend.row;
+    justify-content: space-between;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+  font-weight: 500;
+  font-size: s.size(textTitle);
+}
+
+.title--center {
+  @extend.title;
+  text-align: center;
+}
+
+.text {
+  font-weight: 400;
+  font-size: s.size(text);
+}
+
+.main {
+  @extend.column--center;
+  background-color: s.color(dark);
+  color: s.color(light);
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 92px 1fr 42px;
+  align-items: center;
+  gap: s.space(6);
+
+  &__image {
+    @extend .icon;
+    width: 92px;
+    height: 92px;
+  }
+
+  &__content {
+    @extend.column;
+    gap: s.space(3);
+    .track__title {
+      @extend.title;
+      font-size: s.size(textDescription);
     }
-  
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: s.space(2);
-    }
-  
-    &__name {
-      font-size: 24px;
-      color: s.color(light)
-    }
-  
-    &__amount {
-      font-size: 16px;
-      color: gray;
+
+    .track__text {
+      @extend.text;
+      font-size: s.size(textSmall);
     }
   }
+
+  &__icon {
+    @extend.icon;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #BABABA;
+    border-radius: 50%;
+  }
+}

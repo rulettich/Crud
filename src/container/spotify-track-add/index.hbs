@@ -18,11 +18,16 @@
               <strong class='track__name'>{{name}}</strong>
               <em class='track__author'>{{author}}</em>
             </div>
-            <a
-              href='/spotify-playlist?playlistId={{playlistId}}&trackId={{id}}'
-            >
-              <img src='/svg/track_add_button.svg' />
-            </a>
+            
+             <form action="/spotify-track-add" method="POST">
+                <input type="hidden" name="playlistId" value="{{../playlistId}}">
+                <input type="hidden" name="trackId" value="{{id}}">
+                <button type="submit">
+                   <img src="/svg/track_add_button.svg">
+                </button>
+
+             </form>
+
           </li>
         {{/each}}
       </ul>
