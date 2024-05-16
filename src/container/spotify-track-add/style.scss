@@ -1,6 +1,6 @@
-@use '../../lib/service.scss' as s;
+@use '../../lib.service.scss' as s;
 
-// @use '../../lib/spotify.scss' as spotify;
+@use '../../lib/spotify.scss' as spotify;
 
 a {
   text-decoration: none;

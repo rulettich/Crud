@@ -1,6 +1,6 @@
 /* Error: Can't find stylesheet to import.
  *   ,
- * 1 | @use '../lib/serviсe.scss' as s;
+ * 1 | @use '../lib.service.scss' as s;
  *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *   '
  *   src\lib\spotify.scss 1:1  root stylesheet */
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use '../lib/servi\441 e.scss' as s;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\lib\\spotify.scss 1:1  root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use '../lib.service.scss' as s;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\lib\\spotify.scss 1:1  root stylesheet";
 }
