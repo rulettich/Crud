@@ -274,13 +274,15 @@ router.post('/user-update', function (req, res) {
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
-
+  const playlistId = Number(req.query.playlistId)
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('spotify-choose', {
+  res.render('index', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'spotify-choose',
+    style: 'index',
 
-    data: {},
+    data: {
+      name: playlistId.name,
+    },
   })
   // ↑↑ сюди вводимо JSON дані
 })
@@ -291,8 +293,6 @@ router.get('/', function (req, res) {
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/spotify-choose', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('spotify-choose', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі

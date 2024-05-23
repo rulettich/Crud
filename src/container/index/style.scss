@@ -1,4 +1,4 @@
-@use '../../lib.service.scss' as s;
+@use '../../lib/service.scss' as s;
 
 
 
@@ -85,6 +85,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: s.space(15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .title {

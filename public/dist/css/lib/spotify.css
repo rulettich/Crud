@@ -1,17 +1,79 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use '../lib.service.scss' as s;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src\lib\spotify.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use '../lib.service.scss' as s;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\lib\\spotify.scss 1:1  root stylesheet";
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.6s;
 }
+a:hover {
+  opacity: 0.6;
+}
+
+.column, .track__content, .column--center, .main {
+  display: flex;
+  flex-direction: column;
+}
+
+.column--center, .main {
+  align-items: center;
+}
+
+.row, .row--between {
+  display: flex;
+  align-items: center;
+}
+
+.row--between {
+  justify-content: space-between;
+}
+
+.icon, .track__icon, .track__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title, .track__content .track__title, .title--center {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.title--center {
+  text-align: center;
+}
+
+.text, .track__content .track__text {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.main {
+  background-color: #121212;
+  color: #ddd;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 92px 1fr 42px;
+  align-items: center;
+  gap: 24px;
+}
+.track__image {
+  width: 92px;
+  height: 92px;
+}
+.track__content {
+  gap: 12px;
+}
+.track__content .track__title {
+  font-size: 24px;
+}
+.track__content .track__text {
+  font-size: 16px;
+}
+.track__icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #BABABA;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=spotify.css.map */

@@ -1,17 +1,249 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use '../../lib.service.scss' as s;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src\container\spotify-search\style.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use '../../lib.service.scss' as s;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\container\\spotify-search\\style.scss 1:1  root stylesheet";
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.6s;
 }
+a:hover {
+  opacity: 0.6;
+}
+
+.column, .track__content, .column--center, .main {
+  display: flex;
+  flex-direction: column;
+}
+
+.column--center, .main {
+  align-items: center;
+}
+
+.row, .row--between {
+  display: flex;
+  align-items: center;
+}
+
+.row--between {
+  justify-content: space-between;
+}
+
+.icon, .track__icon, .track__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title, .track__content .track__title, .title--center {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.title--center {
+  text-align: center;
+}
+
+.text, .track__content .track__text {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.main {
+  background-color: #121212;
+  color: #ddd;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 92px 1fr 42px;
+  align-items: center;
+  gap: 24px;
+}
+.track__image {
+  width: 92px;
+  height: 92px;
+}
+.track__content {
+  gap: 12px;
+}
+.track__content .track__title {
+  font-size: 24px;
+}
+.track__content .track__text {
+  font-size: 16px;
+}
+.track__icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #BABABA;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.6s;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+.main {
+  background-color: #121212;
+  height: 100%;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  padding: 24px 8px;
+}
+
+.main__content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.title--center {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.choose {
+  display: grid;
+  gap: 24px;
+}
+
+.choose__item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+}
+
+.choose__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.form__field {
+  width: 100%;
+  font-size: 64px;
+  color: #ddd;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid #ced4da;
+}
+
+.form__button {
+  color: #121212;
+  background-color: #20D562;
+  max-width: fit-content;
+  font-size: 20px;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: opacity 0.6s;
+}
+.form__button:hover {
+  opacity: 0.6;
+}
+
+.add-button {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 24px;
+  color: #ddd;
+  font-size: 18px;
+}
+
+ul {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 78px 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.track__content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.track__name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.track__author {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  display: flex;
+  justify-content: end;
+}
+
+.search {
+  background-color: #292929;
+  padding: 8px 32px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 32px;
+  color: #ddd;
+  font-size: 24px;
+}
+.search__button {
+  color: #ddd;
+  transition: opacity 0.6s;
+}
+.search__button:hover {
+  opacity: 0.6;
+}
+
+.playlist {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.playlist__list {
+  display: grid;
+  gap: 28px;
+}
+.playlist__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.playlist__name {
+  font-size: 24px;
+  color: #ddd;
+}
+.playlist__amount {
+  font-size: 16px;
+  color: gray;
+}
+
+/*# sourceMappingURL=style.css.map */
